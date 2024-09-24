@@ -45,4 +45,24 @@ public class TileTest {
         assertEquals(expectedTileColumn, actualTileColumn);
         assertEquals(expectedTileValue, actualTileValue);
     }
+
+    @Test
+    void tileCreationTestO() {
+        // Expected
+        String expectedTileValue = "O";
+        int expectedTileRow = 1;
+        int expectedTileColumn = 1;
+
+        // Actual
+        Tile tile = new Tile(1, 1);
+        tile.state = TileState.O;
+
+        int actualTileRow = tile.getRow();
+        int actualTileColumn = tile.getColumn();
+        String actualTileValue = tile.state.getValue();
+
+        assertEquals(expectedTileRow, actualTileRow);
+        assertEquals(expectedTileColumn, actualTileColumn);
+        assertEquals(expectedTileValue, actualTileValue);
+    }
 }
