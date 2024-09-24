@@ -1,10 +1,9 @@
 package org.openjfx;
 
-import org.junit.jupiter.api.Test;
 import org.openjfx.Game.Tile;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 import org.openjfx.Game.TileState;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TileTest {
 
