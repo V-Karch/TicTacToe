@@ -17,6 +17,6 @@ public class Tile {
 
     @Override
     public String toString() {
-        return this.state.getValue();
+        return "|" + this.state.getValue() + "|";
     }
 }
