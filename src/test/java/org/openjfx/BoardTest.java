@@ -1,11 +1,10 @@
 package org.openjfx;
 
-
-import org.junit.jupiter.api.Test;
 import org.openjfx.Game.Tile;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.openjfx.Game.Board;
+import org.junit.jupiter.api.Test;
+import org.openjfx.Game.TileState;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class BoardTest {
@@ -47,5 +46,35 @@ public class BoardTest {
         assertEquals(expectedTileRow, actualTileRow);
         assertEquals(expectedTileColumn, actualTileColumn);
         assertEquals(expectedTileValue, actualTileValue);
+    }
+
+    @Test
+    public void testBoardCreationSetTile() {
+        // Expected
+        String expectedTileValue = "X";       
+
+        // Actual
+        Board board = new Board();
+        Tile tile = board.setTile(0, 0, TileState.X);
+
+        String actualTileValue = tile.state.getValue();
+
+        assertEquals(expectedTileValue, actualTileValue);
+    }
+
+    @Test
+    public void testBoardCreationFull() {
+        Board board = new Board();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Tile currentTile = board.getTile(i, j);
+
+                assertEquals(currentTile.getRow(), i);
+                assertEquals(currentTile.getColumn(), j);
+
+                assertEquals(currentTile.state.getValue(), " ");
+            }
+        }
     }
 }
