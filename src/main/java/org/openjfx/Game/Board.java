@@ -26,14 +26,18 @@ public class Board {
 
     public Tile getTile(int row, int column) { return this.board[row][column]; }
 
-    public void setTile(int row, int column, TileState state) {
+    public Tile setTile(int row, int column, TileState state) {
         boolean validity = validateRowColumnRange(row, column);
 
-        if (!validity) { return; } // Return early if input is invalid
+        if (!validity) { 
+            throw new IllegalArgumentException("Invalid Row or Column Value");
+            // Alert the user of their mistake
+        }
         
         Tile tile = new Tile(row, column);
         tile.state = state;
 
         this.board[row][column] = tile;
+        return tile;
     }
 }
