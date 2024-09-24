@@ -15,4 +15,6 @@ public class Board {
             }
         }
     }
+
+    public Tile getTile(int row, int column) { return this.board[row][column]; }
 }
