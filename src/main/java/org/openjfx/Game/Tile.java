@@ -12,10 +12,6 @@ public class Tile {
         this.column = column;
     }
 
-    public void move(Direction direction) {
-        // TODO: Implement
-    }
-
     public int getRow() { return this.row; }
     public int getColumn() { return this.column; }
 }
