@@ -16,5 +16,24 @@ public class Board {
         }
     }
 
+    public boolean validateRowColumnRange(int row, int column) {
+        /**
+         * Returns false if input is invalid, true otherwise
+         */
+        return !(row < 0 || column < 0 || row > 2 || column > 2);
+    }
+
+
     public Tile getTile(int row, int column) { return this.board[row][column]; }
+
+    public void setTile(int row, int column, TileState state) {
+        boolean validity = validateRowColumnRange(row, column);
+
+        if (!validity) { return; } // Return early if input is invalid
+        
+        Tile tile = new Tile(row, column);
+        tile.state = state;
+
+        this.board[row][column] = tile;
+    }
 }
