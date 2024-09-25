@@ -29,6 +29,8 @@ public class TicTacToeCLI {
         if (stdin.length() != 3) {
             result[0] = -1;
             result[1] = -1;
+
+            return result;
         }
 
         int first = Integer.parseInt(stdin.charAt(0) + "");
