@@ -15,11 +15,29 @@ public class TicTacToeCLI {
 
     public TicTacToeCLI() {
         System.out.println("Starting a new TicTacToe CLI Game.");
+        System.out.println("To make a move, enter the board coordinates of your placement.");
     }
 
     public String getMoveFromStdin(String prompt) {
         System.out.printf(prompt + ": ");
         return this.scanner.nextLine();
+    }
+
+    public int[] parseMove(String stdin) {
+        int[] result = new int[2];
+
+        if (stdin.length() != 3) {
+            result[0] = -1;
+            result[1] = -1;
+        }
+
+        int first = Integer.parseInt(stdin.charAt(0) + "");
+        int second = Integer.parseInt(stdin.charAt(1)+ "");
+
+        result[0] = first;
+        result[1] = second;
+
+        return result;
     }
 
     public void displayBoard() {
